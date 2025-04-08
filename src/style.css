@@ -1,5 +1,33 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 body{
-    background: white;
+    background: rgba(22, 189, 22, 0.884);
 }
+
+.card-body { 
+            border-radius: 20px;
+            background-color: rgb(255, 255, 255);
+            margin-top: 300px;   
+            margin: center;   
+            height: 700px;  
+            width: 500px;
+            font-size: 100px;
+        }
+
+
+.suit-top {
+    margin-top: 8px;
+    height: 200px;  
+    width: 100px;
+}
+.value-center {
+    margin: auto;
+    margin-top: 60px;   
+    height: 300px;  
+    width: 100px;
+}
+.suit-bottom { 
+    height: 100px;  
+    width: 800px;
+    justify-content: flex-end;
+    transform: scaleY(-1);}
