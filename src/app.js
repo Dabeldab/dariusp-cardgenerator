@@ -4,7 +4,12 @@ import { Button } from "bootstrap";
 //const dataElement = document.querySelector(cardnumber);
 const cardnumber = [1,2,3,4,5,6,7,8,9,10,'A','J','Q','K']
 const faces = ['♦', '♥', '♠', '♣']
+const toggleit = document.querySelector('#switchie')
+const refreshit = document.querySelector('#refreshbutton')
+let intervalId = null
 
+refreshit.addEventListener('click', shuffle)
+toggleit.addEventListener('click', disablebtn)
 
 window.onload = function () {
   shuffle()
@@ -30,9 +35,18 @@ function shuffle() {
   else suitTop.style.color = 'black',suitBottom.style.color   = 'black', numberCard.style.color = 'black';
 };
 
+/*Auto Refresh Function
 
-document.addEventListener("DOMContentLoaded", function() {
-  const push = document.getElementById("refreshbutton");
-  if (push) { push.addEventListener("click", shuffle)    
+*/
+
+
+function disablebtn() {
+  if  (intervalId) {
+    clearInterval(intervalId);
+    intervalId = null; 
+    document.getElementById("refreshbutton").disabled = false
+  } else {
+    intervalId = setInterval(shuffle, 5000) ;
+    document.getElementById("refreshbutton").disabled = true;
   }
-})
+}
