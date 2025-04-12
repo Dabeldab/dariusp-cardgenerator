@@ -35,13 +35,9 @@ function shuffle() {
   else suitTop.style.color = 'black',suitBottom.style.color   = 'black', numberCard.style.color = 'black';
 };
 
-/*Auto Refresh Function
-
-*/
-
-
+//Auto Refresh Function
 function disablebtn() {
-  if  (intervalId) {
+  if(intervalId) {
     clearInterval(intervalId);
     intervalId = null; 
     document.getElementById("refreshbutton").disabled = false
